@@ -11,7 +11,7 @@ function bodyValidators(keys: string): RequestHandler {
       return
     }
 
-    for (let key of keys) {
+    for (const key of keys) {
       if (!req.body[key]) {
         res.status(422).send(`Missing property ${key}`)
         return
@@ -26,7 +26,7 @@ export function controller(routePrefix: string) {
   return function(target: Function) {
     const router = AppRouter.getInstance()
     
-    for (let key in target.prototype) {
+    for (const key in target.prototype) {
       // get each piece of metadata of each key
       const routeHandler = target.prototype[key]
       const path: string = Reflect.getMetadata(

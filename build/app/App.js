@@ -8,6 +8,7 @@ var express_1 = __importDefault(require("express"));
 var body_parser_1 = __importDefault(require("body-parser"));
 var cookie_session_1 = __importDefault(require("cookie-session"));
 var AppRouter_1 = require("./AppRouter");
+var environment_1 = require("./config/environment");
 require("./controllers/LoginController");
 require("./controllers/RootController");
 var App = /** @class */ (function () {
@@ -26,7 +27,7 @@ var App = /** @class */ (function () {
     };
     App.prototype.startServer = function () {
         var _this = this;
-        var server = this.app.listen(3000, function () {
+        var server = this.app.listen(environment_1.port, function () {
             var port = server.address().port;
             _this.port = port;
             console.log('Listening on port ' + _this.port);

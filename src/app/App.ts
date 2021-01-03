@@ -1,8 +1,12 @@
+import * as dotenv from 'dotenv'
+dotenv.config()
 import express from 'express'
 import bodyParser from 'body-parser'
 import cookieSession from 'cookie-session'
 import { AppRouter } from './AppRouter'
 import { AddressInfo, Server } from 'net'
+
+import { port } from './config/environment'
 
 import './controllers/LoginController'
 import './controllers/RootController'
@@ -23,7 +27,7 @@ export class App {
   }
 
   public startServer(): void {
-    const server = this.app.listen(3000, () => {
+    const server = this.app.listen(port, () => {
       const { port } = server.address() as AddressInfo
       this.port = port
       console.log('Listening on port ' + this.port)
