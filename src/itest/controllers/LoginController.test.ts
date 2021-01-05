@@ -14,11 +14,11 @@ const loginIncorrect = {
 describe('GET /login', () => {
   test('should return a 200 response', async (done) => {
     request
-    .get('/auth/login')
-    .end((err: Error, res: Response) => {
-      expect(res.status).toBe(200)
-      done()
-    })
+      .get('/auth/login')
+      .end((err: Error, res: Response) => {
+        expect(res.status).toBe(200)
+        done()
+      })
   })
 })
 
@@ -48,11 +48,11 @@ describe('POST /login', () => {
 
 describe('GET /logout', () => {
   test('should return 302 redirect response', (done) => {
-  request
-    .get('/auth/logout')
-    .end((err: Error, res: Response) => {
-      expect(res.status).toBe(302)
-      done()
-    })
+    request
+      .get('/auth/logout')
+      .end((err: Error, res: Response) => {
+        expect(res.status).toBe(302)
+        done()
+      })
   })
 })

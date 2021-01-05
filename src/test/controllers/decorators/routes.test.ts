@@ -13,18 +13,18 @@ describe('routes decorator test suite', () => {
   test('should store correct path and method as metadata', () => {
     setTimeout(() => {
       const path: string = Reflect.getMetadata(
-      '/testpath',
-      TestClass.prototype,
-      'testFunc' // name of the function
-    )
+        '/testpath',
+        TestClass.prototype,
+        'testFunc' // name of the function
+      )
 
-    const method: Methods = Reflect.getMetadata(
-      'get',
-      TestClass.prototype,
-      'testFunc'
-    )
-    expect(path).toBe('/testpath')
-    expect(method).toBe('get')
+      const method: Methods = Reflect.getMetadata(
+        'get',
+        TestClass.prototype,
+        'testFunc'
+      )
+      expect(path).toBe('/testpath')
+      expect(method).toBe('get')
     }, 1000)
   })
 })
