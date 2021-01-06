@@ -1,7 +1,4 @@
 import { App } from '../app/App'
-import { AppRouter } from '../app/AppRouter'
-
-//jest.mock('../app/AppRouter')
 
 //mock decorators
 jest.mock('../app/controllers/RootController', () => jest.fn())

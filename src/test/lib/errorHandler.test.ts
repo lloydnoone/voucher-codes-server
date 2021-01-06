@@ -1,5 +1,6 @@
-import { Request, Response, NextFunction } from 'express'
+import { Request, NextFunction } from 'express'
 import { errorHandler } from '../../app/lib/errorHandler'
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 
 const mockRequest = {}
 const mockResponse = {
@@ -17,7 +18,7 @@ const mockError = {
 }
 
 const mockOtherError = {
-  name: 'OtherError',
+  name: 'OtherError'
 }
 
 const statusSpy = jest.spyOn(mockResponse, 'status')
