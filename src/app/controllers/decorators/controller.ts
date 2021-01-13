@@ -4,6 +4,8 @@ import { Methods } from './Methods'
 import { MetadataKeys } from './MetadataKeys'
 import { Request, Response, NextFunction, RequestHandler } from 'express'
 
+type controllerClass = { new(prefix: string): void }
+
 function bodyValidators(keys: string): RequestHandler {
   return function(req: Request, res: Response, next: NextFunction) {
     if (!req.body) {
@@ -23,7 +25,7 @@ function bodyValidators(keys: string): RequestHandler {
 }
 
 export function controller(routePrefix: string) {
-  return function(target: Function) {
+  return function(target: controllerClass): void {
     const router = AppRouter.getInstance()
     
     for (const key in target.prototype) {

@@ -1,5 +1,5 @@
 import { request } from '../../test/helper'
-import { Response } from 'supertest';
+import { Response } from 'supertest'
 
 const loginCorrect = {
   email: 'lloyd@email.com',

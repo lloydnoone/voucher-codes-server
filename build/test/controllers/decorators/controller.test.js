@@ -48,7 +48,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 require("reflect-metadata");
 var decorators_1 = require("../../../app/controllers/decorators");
 var App_1 = require("../../../app/App");
-jest.mock('../../../app/controllers/RootController', function () { return jest.fn(); });
+//jest.mock('../../../app/controllers/RootController', () => jest.fn())
 jest.mock('../../../app/controllers/LoginController', function () { return jest.fn(); });
 function testMiddleware() { }
 var TestClass = /** @class */ (function () {
@@ -67,6 +67,7 @@ var TestClass = /** @class */ (function () {
     ], TestClass);
     return TestClass;
 }());
+console.log(typeof TestClass);
 var app = new App_1.App();
 beforeAll(function (done) { return __awaiter(void 0, void 0, void 0, function () {
     return __generator(this, function (_a) {

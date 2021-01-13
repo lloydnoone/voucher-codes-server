@@ -1,3 +1,7 @@
+/* eslint-disable  @typescript-eslint/explicit-module-boundary-types */
+/* eslint-disable  @typescript-eslint/no-unused-vars */
+/* eslint-disable  @typescript-eslint/no-explicit-any */
+
 import 'reflect-metadata'
 import { RequestHandler } from 'express'
 import { Methods } from './Methods'

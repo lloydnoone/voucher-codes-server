@@ -1,3 +1,5 @@
+/* eslint-disable  @typescript-eslint/no-empty-function */
+
 import 'reflect-metadata'
 import { use } from '../../../app/controllers/decorators/use'
 

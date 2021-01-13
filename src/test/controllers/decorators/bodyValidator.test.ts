@@ -1,11 +1,11 @@
+/* eslint-disable  @typescript-eslint/no-empty-function */
+
 import 'reflect-metadata'
 import { bodyValidator } from '../../../app/controllers/decorators/bodyValidator'
 
 class TestClass {
   @bodyValidator('name', 'pass')
-  testFunc(): void {
-
-  }
+  testFunc(): void {}
 }
 
 describe('bodyValidator test suite', () => {

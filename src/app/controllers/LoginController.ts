@@ -1,5 +1,7 @@
-import { NextFunction, Request, Response } from 'express'
-import { get, controller, use, bodyValidator, post } from './decorators'
+/* eslint-disable  @typescript-eslint/no-unused-vars */
+
+import { Request, Response } from 'express'
+import { get, controller, bodyValidator, post } from './decorators'
 
 @controller('/auth')
 class LoginController {

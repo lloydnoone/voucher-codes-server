@@ -1,3 +1,5 @@
+/* eslint-disable  @typescript-eslint/no-empty-function */
+
 import 'reflect-metadata'
 import { Methods } from '../../../app/controllers/decorators/Methods'
 import { get } from '../../../app/controllers/decorators/routes'

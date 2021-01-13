@@ -37,7 +37,6 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var App_1 = require("../app/App");
-//jest.mock('../app/AppRouter')
 //mock decorators
 jest.mock('../app/controllers/RootController', function () { return jest.fn(); });
 jest.mock('../app/controllers/LoginController', function () { return jest.fn(); });

@@ -1,3 +1,7 @@
+/* eslint-disable  @typescript-eslint/no-explicit-any */
+/* eslint-disable  @typescript-eslint/no-empty-function */
+/* eslint-disable  @typescript-eslint/no-unused-vars */
+
 import 'reflect-metadata'
 import { controller, get, use } from '../../../app/controllers/decorators'
 import { App } from '../../../app/App'
@@ -31,25 +35,25 @@ describe('controller decorator test suite', () => {
     //pull off details from express router
     let route
     const routes: { 
-      path: String, 
+      path: string, 
       methods: { 
         get: boolean 
       }, 
       stack: [
         Layer: {
-          handle: () => {}
+          handle: () => void
         }
       ] 
-    }[] = [];
+    }[] = []
     app.getApp()._router.stack.forEach(function(middleware: any){
-        if(middleware.route){ // routes registered directly on the app
-            routes.push(middleware.route);
-        } else if(middleware.name === 'router'){ // router middleware
-            middleware.handle.stack.forEach(function(handler: any){
-                route = handler.route;
-                route && routes.push(route);
-            });
-        }
+      if (middleware.route){ // routes registered directly on the app
+        routes.push(middleware.route)
+      } else if (middleware.name === 'router'){ // router middleware
+        middleware.handle.stack.forEach(function(handler: any){
+          route = handler.route
+          route && routes.push(route)
+        })
+      }
     })
     expect(routes[0].path).toBe('/testprefix/testroute')
     expect(routes[0].methods.get).toBe(true)
